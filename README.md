@@ -32,11 +32,22 @@
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 [vet_clinic database] <a name="about-project"></a>
-In this project, I used a relational database to create the initial data structure for a vet clinic. I created a table to store animals' information, insert some data into it, and query it.
+[Vet_clinic_database] is a database based project which uses PostGreSQL, I used a relational database to create the initial data structure for a vet clinic. I also created a table to store animals' information, insert some data into it, and query it.
 
 ## 🛠 Built With <a name="built-with"></a>
+<li>PostgreSQL</li>
+<li>Github</li>
+<li>GitFlow</li>
+<li>SQL</li>
 
 ### Tech Stack <a name="tech-stack"></a>
+
+<details>
+<summary>Server</summary>
+  <ul>
+    <li><a href="https://expressjs.com/">Express.js</a></li>
+  </ul>
+</details>
 
 <details>
 <summary>Database</summary>
@@ -49,101 +60,68 @@ In this project, I used a relational database to create the initial data structu
 
 ### Key Features <a name="key-features"></a>
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+Table of animals that contains: id, name, date of birth, escape attempts, neutered, weight in kgs columns
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
- The live demo will be found here when ready
+ The live demo will be found here when ready,
 - [Live Demo Link](<replace-with-your-deployment-URL>)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
-## 💻 Getting Started <a name="getting-started"></a>
+## Getting Started
 
-> Describe how a new developer could make use of your project.
+This repository includes files with plain SQL that can be used to recreate a database:
 
-To get a local copy up and running, follow these steps.
+- Use [schema.sql](./schema.sql) to create all tables.
+- Use [data.sql](./data.sql) to populate tables with sample data.
+- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
 
 ### Prerequisites
 
 In order to run this project you need:
-
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+PostGreSQL installer
+Github account
 
 ### Setup
 
-Clone this repository to your desired folder:
-
-<!--
-Example commands:
+Open psql
+create a new database using CREATE DATABASE vet_clinic
 
 ```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  cd vet_clinic
+  git clone https://github.com/Christelle-12/vet_clinic.git
 ```
---->
 
 ### Install
 
 Install this project with:
-
-<!--
-Example command:
-
-```sh
-  cd my-project
-  gem install
-```
---->
+[psql installer](https://www.postgresql.org/download/)
 
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
-Example command:
+
 
 ```sh
-  rails server
+  \c vet_clinic
 ```
---->
 
 ### Run tests
 
 To run tests, run the following command:
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
+no tests required.
 
 ### Deployment
 
 You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
+No deployment so far,
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -174,7 +152,7 @@ Example:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page]().
+Feel free to check the [issues page](https://github.com/Christelle-12/vet_clinic/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -182,7 +160,7 @@ Feel free to check the [issues page]().
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project, you can show your support by giving this project's repository a star on [github](https://github.com/Christelle-12/react-redux-capstone).
+If you like this project, you can show your support by giving this project's repository a star on [github](https://github.com/Christelle-12/vet_clinic.git).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -199,7 +177,5 @@ I would like to thank Microverse for the outstanding collection of information t
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
