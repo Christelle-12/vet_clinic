@@ -53,7 +53,10 @@ SELECT * FROM animals;
 COMMIT;
 /************Aggregation*****************/
 SELECT COUNT(*)  FROM animals;
-SELECT COUNT(*) FROM animals WHERE escape_attempts = 0;
+SELECT neutered, 
+MAX ( escape_attempts )
+FROM animals
+GROUP BY neutered ;
 SELECT AVG ( weight_kg) FROM animals;
 SELECT MAX(escape_attempts)
 SELECT species, MIN(weight_kg),  MAX (weight_kg)
