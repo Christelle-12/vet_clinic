@@ -132,8 +132,8 @@ No deployment so far,
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Make use of multiple tables]**
-- [ ] **[Use primary and foreign key]**
+- [ ] **[Make use of many-to-many relationships of tables]**
+- [ ] **[write more complex queries ]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
