@@ -24,3 +24,24 @@ VALUES ('Ditto', '2022-05-14', 4, true, 22);
 UPDATE animals
 SET weight_kg = -11
 WHERE name = 'Charmander';
+/***************************************************************/
+UPDATE animals
+SET owner_id = 2
+WHERE name IN ( 'Gabumon', 'Pikachu');
+UPDATE 2
+UPDATE animals
+SET owner_id = 3
+WHERE name IN ( 'Devimon', 'Plantmon');
+UPDATE 2
+UPDATE animals
+SET owner_id = 3
+WHERE name IN ( 'Charmander', 'Squirtle', 'Blossom');
+UPDATE 3
+UPDATE animals
+SET owner_id = 4
+WHERE name IN ( 'Charmander', 'Squirtle', 'Blossom');
+UPDATE 3
+UPDATE animals
+SET owner_id = 5
+WHERE name IN ( 'Angemon', 'Boarmon');
+UPDATE 2
