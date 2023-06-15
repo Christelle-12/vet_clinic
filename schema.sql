@@ -12,6 +12,17 @@ PRIMARY KEY(id)
 ALTER TABLE animals
 ADD species VARCHAR(50);
 /************************************************************************/
+CREATE TABLE owners (
+id SERIAL PRIMARY KEY,
+full_name VARCHAR(100),
+age INTEGER
+);
+CREATE TABLE
+CREATE TABLE species (
+id SERIAL PRIMARY KEY,
+name VARCHAR(100) 
+);
+CREATE TABLE
 CREATE TABLE animals_backup AS SELECT * FROM animals;
 SELECT 10
 DROP TABLE animals;
