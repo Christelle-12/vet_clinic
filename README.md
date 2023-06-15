@@ -132,9 +132,8 @@ No deployment so far,
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Use database transactions]**
-- [ ] **[Modify and delete data in SQL]**
-- [ ] **[Prepare complex queries that answer analytical questions]**
+- [ ] **[Make use of multiple tables]**
+- [ ] **[Use primary and foreign key]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
