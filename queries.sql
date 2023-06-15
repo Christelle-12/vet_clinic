@@ -66,4 +66,83 @@ SELECT species,
 AVG (escape_attempts) 
 FROM animals WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
 GROUP BY species ;
-/*********/
+/*******************queries using JOIN*****************************/
+SELECT animals.name
+FROM animals
+JOIN owners ON animals.owner_id = owners.id
+WHERE owners.full_name = 'Melody Pond';
+    name    
+------------
+ Blossom
+ Squirtle
+ Charmander
+(3 rows)
+SELECT animals.name
+FROM animals
+INNER JOIN species ON animals.species_id = species.id
+WHERE species.name = 'Pokemon';
+    name    
+------------
+ Pikachu
+ Blossom
+ Squirtle
+ Charmander
+(4 rows)
+
+SELECT owners.full_name, animals.name AS animal_name
+FROM owners
+LEFT JOIN animals ON owners.id = animals.owner_id;
+    full_name    | animal_name 
+-----------------+-------------
+ Sam Smith       | Agumon
+ Jennifer Orwell | Gabumon
+ Bob             | Devimon
+ Bob             | Plantmon
+ Dean Winchester | Boarmon
+ Dean Winchester | Angemon
+ Jennifer Orwell | Pikachu
+ Melody Pond     | Blossom
+ Melody Pond     | Squirtle
+ Melody Pond     | Charmander
+ Jodie Whittaker | 
+(11 rows)
+
+SELECT species.name AS species_name, COUNT(*) AS animal_count
+FROM animals
+JOIN species ON animals.species_id = species.id
+GROUP BY species.name;
+ species_name | animal_count 
+--------------+--------------
+ Pokemon      |            4
+ Digimon      |            6
+(2 rows)
+
+SELECT animals.name AS digimon_name
+FROM animals
+JOIN owners ON animals.owner_id = owners.id
+JOIN species ON animals.species_id = species.id
+WHERE owners.full_name = 'Jennifer Orwell' AND species.name = 'Digimon';
+ digimon_name 
+--------------
+ Gabumon
+(1 row)
+
+SELECT animals.name AS animal_name
+FROM animals
+JOIN owners ON animals.owner_id = owners.id
+WHERE owners.full_name = 'Dean Winchester' AND animals.escape_attempts = 0;
+ animal_name 
+-------------
+(0 rows)
+
+SELECT owners.full_name, COUNT(animals.id) AS animal_count
+FROM owners
+LEFT JOIN animals ON owners.id = animals.owner_id
+GROUP BY owners.id, owners.full_name
+ORDER BY animal_count DESC
+LIMIT 1;
+  full_name  | animal_count 
+-------------+--------------
+ Melody Pond |            3
+(1 row)
+

@@ -24,3 +24,56 @@ VALUES ('Ditto', '2022-05-14', 4, true, 22);
 UPDATE animals
 SET weight_kg = -11
 WHERE name = 'Charmander';
+/***************************************************************/
+INSERT INTO owners (full_name, age)
+VALUES ('Sam Smith', 34);          
+INSERT 0 1
+INSERT INTO owners (full_name, age)
+VALUES ('Jennifer Orwell', 19);
+INSERT 0 1
+INSERT INTO owners (full_name, age)
+VALUES ('Bob', 45);
+INSERT 0 1
+INSERT INTO owners (full_name, age)
+VALUES ('Melody Pond', 77);
+INSERT 0 1
+INSERT INTO owners (full_name, age)
+VALUES ('Dean Winchester', 14);
+INSERT 0 1
+INSERT INTO owners (full_name, age)
+VALUES ('Jodie Whittaker', 38);
+INSERT 0 1
+INSERT INTO species (name)
+VALUES ('Pokemon');
+INSERT 0 1
+INSERT INTO species (name)
+VALUES ('Digimon');
+INSERT 0 1
+UPDATE animals
+SET species_id = 2
+WHERE name LIKE '%mon';
+UPDATE 6
+UPDATE animals
+SET species_id = 1
+WHERE species_id IS NULL;
+UPDATE 4
+UPDATE animals
+SET owner_id = 2
+WHERE name IN ( 'Gabumon', 'Pikachu');
+UPDATE 2
+UPDATE animals
+SET owner_id = 3
+WHERE name IN ( 'Devimon', 'Plantmon');
+UPDATE 2
+UPDATE animals
+SET owner_id = 3
+WHERE name IN ( 'Charmander', 'Squirtle', 'Blossom');
+UPDATE 3
+UPDATE animals
+SET owner_id = 4
+WHERE name IN ( 'Charmander', 'Squirtle', 'Blossom');
+UPDATE 3
+UPDATE animals
+SET owner_id = 5
+WHERE name IN ( 'Angemon', 'Boarmon');
+UPDATE 2
