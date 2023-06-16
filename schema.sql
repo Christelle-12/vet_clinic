@@ -57,5 +57,35 @@ ADD CONSTRAINT fk_owner_id
 FOREIGN KEY (owner_id)
 REFERENCES owners(id);
 ALTER TABLE
+/***************************************************************************************************/
+CREATE TABLE vets (
+id SERIAL PRIMARY KEY,
+name VARCHAR(100),
+age INTEGER,
+date_of_graduation DATE
+);
+CREATE TABLE
+CREATE TABLE specializations (
+vets_id INTEGER  REFERENCES vets(id),
+species_id INTEGER REFERENCES species(id),
+PRIMARY KEY (vets_id,species_id)
+);
+CREATE TABLE visits (
+animals_id INTEGER  REFERENCES animals(id),
+vets_id INTEGER REFERENCES vets(id),
+visit_dates DATE,               
+PRIMARY KEY (animals_id,vets_id)
+);
+CREATE TABLE
+ALTER TABLE visits
+DROP CONSTRAINT visits_pkey;
+ALTER TABLE
+
+ALTER TABLE visits
+ADD COLUMN visit_id SERIAL PRIMARY KEY;
+ALTER TABLE
+vet_clinic=# ALTER TABLE visits
+ADD CONSTRAINT visits_unique_constraint UNIQUE (animals_id, vets_id, visit_dates);
+ALTER TABLE
 
 
