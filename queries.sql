@@ -145,4 +145,112 @@ LIMIT 1;
 -------------+--------------
  Melody Pond |            3
 (1 row)
+/*******************************************************************************/
+SELECT animals.name
+FROM animals
+INNER JOIN visits ON animals.id = visits.animals_id
+INNER JOIN vets ON visits.vets_id = vets.id
+WHERE vets.name = 'William Tatcher'
+ORDER BY visits.visit_dates DESC
+LIMIT 1;
+  name   
+---------
+ Blossom
+(1 row)
+
+SELECT COUNT(DISTINCT animals.id) AS animal_count
+FROM animals
+INNER JOIN visits ON animals.id = visits.animals_id
+INNER JOIN vets ON visits.vets_id = vets.id
+WHERE vets.name = 'Stephanie Mendez';
+ animal_count 
+--------------
+            4
+(1 row)
+
+SELECT vets.id, vets.name, specializations.species_id
+FROM vets
+LEFT JOIN specializations ON vets.id = specializations.vets_id; 
+ id |       name       | species_id 
+----+------------------+------------
+  1 | William Tatcher  |          1
+  3 | Stephanie Mendez |          1
+  3 | Stephanie Mendez |          2
+  4 | Jack Harkness    |          2
+  2 | Maisy Smith      |           
+(5 rows)
+
+SELECT animals.name
+FROM animals
+INNER JOIN visits ON animals.id = visits.animals_id
+INNER JOIN vets ON visits.vets_id = vets.id
+WHERE visits.visit_dates >= '2020-04-01'
+AND visits.visit_dates <= '2020-08-30'
+AND vets.name = 'Stephanie Mendez';
+  name   
+---------
+ Agumon
+ Blossom
+(2 rows)
+
+SELECT animals.name, COUNT(visits.animals_id) AS visit_count
+FROM animals
+INNER JOIN visits ON animals.id = visits.animals_id
+GROUP BY animals.id
+ORDER BY visit_count DESC
+LIMIT 1;
+  name   | visit_count 
+---------+-------------
+ Boarmon |           4
+(1 row)
+
+SELECT animals.name, visits.visit_dates
+FROM visits
+INNER JOIN vets ON visits.vets_id = vets.id
+INNER JOIN animals ON visits.animals_id = animals.id
+WHERE vets.name = 'Maisy Smith'
+ORDER BY visits.visit_dates
+LIMIT 1;
+  name   | visit_dates 
+---------+-------------
+ Boarmon | 2019-01-24
+(1 row)
+
+SELECT animals.name AS animal_name, vets.name AS vet_name, visits.visit_dates AS visit_date
+FROM visits
+INNER JOIN vets ON visits.vets_id = vets.id
+INNER JOIN animals ON visits.animals_id = animals.id
+ORDER BY visits.visit_dates DESC
+LIMIT 1;
+ animal_name |     vet_name     | visit_date 
+-------------+------------------+------------
+ Devimon     | Stephanie Mendez | 2021-05-04
+(1 row)
+
+SELECT COUNT(*) AS num_visits
+FROM visits
+INNER JOIN vets ON visits.vets_id = vets.id
+INNER JOIN animals ON visits.animals_id = animals.id
+LEFT JOIN specializations ON vets.id = specializations.vets_id AND animals.species_id = specializations.species_id
+WHERE specializations.vets_id IS NULL OR specializations.vets_id IS NOT NULL AND specializations.species_id IS NULL;
+ num_visits 
+------------
+         12
+(1 row)
+
+SELECT species.name AS specialty, COUNT(*) AS num_visits
+FROM visits
+INNER JOIN vets ON visits.vets_id = vets.id
+INNER JOIN animals ON visits.animals_id = animals.id
+INNER JOIN species ON animals.species_id = species.id
+WHERE vets.name = 'Maisy Smith'
+GROUP BY species.name
+ORDER BY num_visits DESC
+LIMIT 1;
+ specialty | num_visits 
+-----------+------------
+ Digimon   |          6
+(1 row)
+
+
 
