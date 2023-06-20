@@ -126,6 +126,10 @@ No deployment so far,
 - Twitter: [@Chr1Nirere](https://twitter.com/Chr1Nirere)
 - LinkedIn :[LinkedIn](https://www.linkedin.com/in/nirere-marie-christelle-9b139823b/)
 
+👤 **Basir Elham**
+- GitHub: [@Elhambasir](https://github.com/Elhambasir)
+- LinkedIn :[LinkedIn](https://www.linkedin.com/in/basirelhamahmadi)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
